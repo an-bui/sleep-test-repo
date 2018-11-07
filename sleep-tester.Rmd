@@ -21,10 +21,20 @@ sleep_simpl <- sleep %>%
   na.omit()
 ```
 
-```{r sample graph}
+```{r sample graph of dream vs nondream}
 dream <- ggplot(sleep_simpl, aes(x = nondream, y = dream)) +
-  geom_point()
+  geom_point() +
+  labs(x = "Dream", y = "Nondream")
 
 dream
+```
+
+```{r sample graph of life_span vs total_sleep}
+life <- ggplot(sleep_simpl, aes(x = total_sleep, y = life_span)) +
+  geom_point() +
+  labs(x = "Total time sleeping (hours)", y = "Life span (years)") +
+  theme_classic()
+
+life
 ```
 
