@@ -9,8 +9,16 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+```{r set up packages and data, message = FALSE}
 library(tidyverse)
 
 sleep <- read_csv("sleep.csv")
 ```
+
+```{r sample graph}
+dream <- ggplot(sleep, aes(x = nondream, y = dream)) +
+  geom_point()
+
+dream
+```
+
