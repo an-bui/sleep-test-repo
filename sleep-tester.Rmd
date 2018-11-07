@@ -15,8 +15,14 @@ library(tidyverse)
 sleep <- read_csv("sleep.csv")
 ```
 
+```{r simplify data}
+# create new data frame from sleep
+sleep_simpl <- sleep %>% 
+  na.omit()
+```
+
 ```{r sample graph}
-dream <- ggplot(sleep, aes(x = nondream, y = dream)) +
+dream <- ggplot(sleep_simpl, aes(x = nondream, y = dream)) +
   geom_point()
 
 dream
